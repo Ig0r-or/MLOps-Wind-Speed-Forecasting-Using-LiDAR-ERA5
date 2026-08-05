@@ -1,0 +1,22 @@
+# Ambientes Virtuais e Caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git e IDEs
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Rascunhos e Documentação
+notebooks/
+*.md
+
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep

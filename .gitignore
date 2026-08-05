@@ -1,0 +1,27 @@
+# Ambiente Virtual
+.venv/
+env/
+ENV/
+
+# Dados
+data/raw/*
+data/processed/*
+!.gitignore
+
+# Cache do Python e Bytecodes
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+#arquivos temp
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
