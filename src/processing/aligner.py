@@ -12,11 +12,14 @@ class DataAligner:
     @staticmethod
     def abordagem_a(df_lidar: pd.DataFrame) -> pd.DataFrame:
         """
-        Abordagem A: Janela Tradicional.
-        Suaviza o LiDAR (10min) para a escala horária do ERA5 via média de bloco.
+        Abordagem A: Janela Centrada (Média de Bloco).
+        Média entre T-30min e T+20min para representar o timestamp T.
         """
-        return df_lidar[['ws100']].resample('1h').mean().rename(columns={'ws100': 'ws100_lidar'})
+        df_resampled = df_lidar[['ws100']].resample('1h', offset='30min').mean()
+        df_resampled.index = df_resampled.index + pd.Timedelta(minutes=30)
 
+        return df_resampled.rename(columns={'ws100': 'ws100_lidar'})
+             
     @staticmethod
     def abordagem_b(ds_era5: xr.Dataset) -> pd.DataFrame:
         """
