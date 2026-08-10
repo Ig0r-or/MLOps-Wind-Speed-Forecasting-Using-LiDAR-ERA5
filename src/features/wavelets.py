@@ -12,7 +12,7 @@ class WaveletProcessor:
         data = np.array(data, copy=True)
         
         # Decompõe o sinal em coeficientes de aproximação e detalhe
-        coeff = pywt.wavedec(data, wavelet, mode="per")
+        coeff = pywt.wavedec(data, wavelet, level=level, mode="per")
         
         # Zera os coeficientes de detalhe (ruído)
         coeff[1:] = [np.zeros_like(v) for v in coeff[1:]]
