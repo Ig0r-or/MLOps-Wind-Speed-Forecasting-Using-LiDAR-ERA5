@@ -1,3 +1,4 @@
+```
 Previsão_de_vento(lidar + Era5)/
 ├── .venv/                      # Pasta do ambiente virtual (criada automaticamente)
 ├── .gitignore                  # Arquivos que NÃO vão para o GitHub (.venv, dados brutos etc)
@@ -38,3 +39,4 @@ Previsão_de_vento(lidar + Era5)/
 ├── wind_forecasting.egg-info/
 │   └── 
 └── main.py                     # Script principal que executa a pipeline ponta a ponta
+```
