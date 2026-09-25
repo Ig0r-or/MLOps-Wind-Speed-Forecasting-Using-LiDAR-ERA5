@@ -1,6 +1,7 @@
 from src.data.loader import DataLoader
 from src.processing.aligner import DataAligner
 from src.features.wavelets import WaveletProcessor
+from src.data.exporter import DataExporter
 
 def main():
     # 1. Ingestão dos dados brutos
@@ -37,5 +38,9 @@ def main():
     print("\nAbordagem B (Denoised):")
     print(df_analise_b[['ws100_era5', 'ws100_lidar', 'ws100_lidar_clean']].head())
     
+    DataExporter.export(df_analise_a, "approach_a")
+    DataExporter.export(df_analise_b, "approach_b")
+    
 if __name__ == "__main__":
-    main()
+    main() 
+    
